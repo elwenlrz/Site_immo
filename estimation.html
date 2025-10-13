@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation Immobilière - Estimation Gironde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logo">
+                <h1>Estimation Gironde</h1>
+                <p>Votre expert immobilier en Gironde</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="estimation.html">Estimation</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="estimation-form">
+            <div class="container">
+                <h2>Demandez votre estimation gratuite</h2>
+                <p>Remplissez ce formulaire pour obtenir une estimation précise de votre bien</p>
+                
+                <form id="estimationForm">
+                    <div class="form-grid-compact">
+                        <div class="form-group form-group-compact">
+                            <label for="property-type">Type de bien</label>
+                            <select id="property-type" name="property-type" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="maison">Maison</option>
+                                <option value="appartement">Appartement</option>
+                                <option value="terrain">Terrain</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group form-group-compact">
+                            <label for="city">Ville</label>
+                            <input type="text" id="city" name="city" required placeholder="Ex: Bordeaux centre">
+                            <small>Précisez le quartier si connu</small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-compact">
+                        <div class="form-group form-group-compact">
+                            <label for="surface">Surface (m²)</label>
+                            <input type="number" id="surface" name="surface" required min="1">
+                        </div>
+                        
+                        <div class="form-group form-group-compact">
+                            <label for="rooms">Pièces</label>
+                            <input type="number" id="rooms" name="rooms" required min="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-compact">
+                        <div class="form-group form-group-compact">
+                            <label for="bedrooms">Chambres</label>
+                            <input type="number" id="bedrooms" name="bedrooms" required min="0">
+                        </div>
+                        
+                        <div class="form-group form-group-compact">
+                            <label for="year">Année construction</label>
+                            <input type="number" id="year" name="year" min="1800" max="2024" placeholder="1990">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-compact">
+                        <div class="form-group form-group-compact">
+                            <label for="condition">État du bien</label>
+                            <select id="condition" name="condition" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="excellent">Excellent</option>
+                                <option value="bon">Bon</option>
+                                <option value="moyen">Moyen</option>
+                                <option value="renovation">À rénover</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group form-group-compact">
+                            <label for="etage">Étage</label>
+                            <select id="etage" name="etage">
+                                <option value="rez-de-chaussee">Rez-de-chaussée</option>
+                                <option value="intermediaire">Étage intermédiaire</option>
+                                <option value="dernier">Dernier étage</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group form-group-compact">
+                        <label>Équipements</label>
+                        <div class="checkbox-group-compact">
+                            <label class="checkbox checkbox-compact">
+                                <input type="checkbox" id="balcon" name="balcon">
+                                Balcon
+                            </label>
+                            <label class="checkbox checkbox-compact">
+                                <input type="checkbox" id="parking" name="parking">
+                                Parking
+                            </label>
+                            <label class="checkbox checkbox-compact">
+                                <input type="checkbox" id="cave" name="cave">
+                                Cave
+                            </label>
+                            <label class="checkbox checkbox-compact">
+                                <input type="checkbox" id="jardin" name="jardin">
+                                Jardin
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-compact">
+                        <div class="form-group form-group-compact">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group form-group-compact">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group form-group-compact">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">
+                        Obtenir mon estimation précise
+                    </button>
+                </form>
+            </div>
+        </section>
+    
+        <!-- Section résultat d'estimation -->
+        <section id="result-section" style="display: none;">
+            <div class="container">
+                <div class="estimation-result">
+                    <h2>🎯 Votre Estimation Personnalisée</h2>
+                    
+                    <div class="result-grid">
+                        <div class="result-main">
+                            <div class="prix-final">350 000 €</div>
+                            <div class="prix-m2">4 375 €/m²</div>
+                            <div class="confidence">Estimation fiable à ± 8%</div>
+                        </div>
+                        
+                        <div class="result-details">
+                            <h3>Détail de l'estimation</h3>
+                            <div class="details-list">
+                                <div class="detail-item">
+                                    <span class="detail-label">Prix de base:</span>
+                                    <span class="detail-value">320 000 €</span>
+                                </div>
+                                <div class="detail-item positive">
+                                    <span class="detail-label">Balcon:</span>
+                                    <span class="detail-value">+ 8 000 €</span>
+                                </div>
+                                <div class="detail-item positive">
+                                    <span class="detail-label">Parking:</span>
+                                    <span class="detail-value">+ 15 000 €</span>
+                                </div>
+                                <div class="detail-item negative">
+                                    <span class="detail-label">État moyen:</span>
+                                    <span class="detail-value">- 12 000 €</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button class="btn btn-secondary" onclick="recalculerEstimation()">Modifier les critères</button>
+                        <button class="btn" onclick="envoyerEstimation()">Recevoir par email</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Estimation Immobilière Gironde - Tous droits réservés</p>
+            <p>Contact: contact@estimation-gironde.fr | Tel: 05 56 XX XX XX</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculerEstimationComplete() {
+            // Récupère toutes les valeurs
+            const ville = document.getElementById('city').value.toLowerCase();
+            const surface = parseInt(document.getElementById('surface').value) || 0;
+            const pieces = parseInt(document.getElementById('rooms').value) || 0;
+            const chambres = parseInt(document.getElementById('bedrooms').value) || 0;
+            const type = document.getElementById('property-type').value;
+            const etat = document.getElementById('condition').value;
+            const annee = parseInt(document.getElementById('year').value) || 0;
+            const etage = document.getElementById('etage').value;
+            
+            // Équipements
+            const balcon = document.getElementById('balcon').checked;
+            const parking = document.getElementById('parking').checked;
+            const cave = document.getElementById('cave').checked;
+            const jardin = document.getElementById('jardin').checked;
+            
+            if (ville && surface > 0 && pieces > 0) {
+                // Prix de base standard
+                let prixBase = surface * 2800;
+                let ajustements = [];
+                
+                // IMPACT VILLE - TRÈS FORT
+                if (ville.includes('bordeaux')) {
+                    if (ville.includes('centre') || ville.includes('chartrons')) {
+                        const ajout = (surface * 6200) - prixBase;
+                        prixBase = surface * 6200;
+                        ajustements.push({ label: "Quartier premium Bordeaux", valeur: ajout });
+                    } else if (ville.includes('saint-michel') || ville.includes('bastide')) {
+                        const ajout = (surface * 3800) - prixBase;
+                        prixBase = surface * 3800;
+                        ajustements.push({ label: "Secteur Bordeaux", valeur: ajout });
+                    } else {
+                        const ajout = (surface * 4800) - prixBase;
+                        prixBase = surface * 4800;
+                        ajustements.push({ label: "Ville de Bordeaux", valeur: ajout });
+                    }
+                } else if (ville.includes('arcachon')) {
+                    const ajout = (surface * 6500) - prixBase;
+                    prixBase = surface * 6500;
+                    ajustements.push({ label: "Secteur Arcachon", valeur: ajout });
+                } else if (ville.includes('merignac')) {
+                    const ajout = (surface * 3800) - prixBase;
+                    prixBase = surface * 3800;
+                    ajustements.push({ label: "Ville de Mérignac", valeur: ajout });
+                } else if (ville.includes('libourne') || ville.includes('langon')) {
+                    const ajout = (surface * 2500) - prixBase;
+                    prixBase = surface * 2500;
+                    ajustements.push({ label: "Ville périphérique", valeur: ajout });
+                }
+                
+                // IMPACT SURFACE - Calculé automatiquement dans le prix de base
+                
+                // IMPACT NOMBRE DE PIÈCES
+                if (pieces >= 5) {
+                    const ajout = prixBase * 0.12;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Grande surface (>4 pièces)", valeur: ajout });
+                } else if (pieces <= 2) {
+                    const ajout = prixBase * -0.10;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Petite surface (≤2 pièces)", valeur: ajout });
+                }
+                
+                // IMPACT ÉTAT DU BIEN
+                if (etat === 'excellent') {
+                    const ajout = prixBase * 0.20;
+                    prixBase += ajout;
+                    ajustements.push({ label: "État excellent", valeur: ajout });
+                } else if (etat === 'bon') {
+                    const ajout = prixBase * 0.10;
+                    prixBase += ajout;
+                    ajustements.push({ label: "État bon", valeur: ajout });
+                } else if (etat === 'moyen') {
+                    const ajout = prixBase * -0.08;
+                    prixBase += ajout;
+                    ajustements.push({ label: "État moyen", valeur: ajout });
+                } else if (etat === 'renovation') {
+                    const ajout = prixBase * -0.40;
+                    prixBase += ajout;
+                    ajustements.push({ label: "À rénover", valeur: ajout });
+                }
+                
+                // IMPACT ANNÉE DE CONSTRUCTION
+                if (annee > 0) {
+                    const age = 2024 - annee;
+                    if (age < 5) {
+                        const ajout = prixBase * 0.08;
+                        prixBase += ajout;
+                        ajustements.push({ label: "Construction récente (<5 ans)", valeur: ajout });
+                    } else if (age > 50) {
+                        const ajout = prixBase * -0.05;
+                        prixBase += ajout;
+                        ajustements.push({ label: "Construction ancienne (>50 ans)", valeur: ajout });
+                    } else if (age > 20) {
+                        const ajout = prixBase * -0.02;
+                        prixBase += ajout;
+                        ajustements.push({ label: "Construction moyenne (20-50 ans)", valeur: ajout });
+                    }
+                }
+                
+                // IMPACT NOMBRE DE CHAMBRES
+                if (chambres > 0 && pieces > 0) {
+                    const ratio = chambres / pieces;
+                    if (ratio >= 0.8) {
+                        const ajout = prixBase * 0.06;
+                        prixBase += ajout;
+                        ajustements.push({ label: "Bon ratio chambres/pièces", valeur: ajout });
+                    } else if (ratio <= 0.4) {
+                        const ajout = prixBase * -0.04;
+                        prixBase += ajout;
+                        ajustements.push({ label: "Ratio chambres faible", valeur: ajout });
+                    }
+                }
+                
+                // IMPACT TYPE DE BIEN
+                if (type === 'maison') {
+                    const ajout = prixBase * 0.15;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Maison (vs appartement)", valeur: ajout });
+                } else if (type === 'terrain') {
+                    const ajout = prixBase * -0.30;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Terrain (sans construction)", valeur: ajout });
+                }
+                
+                // IMPACT ÉQUIPEMENTS
+                if (balcon) {
+                    const ajout = 8000;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Balcon/Terrasse", valeur: ajout });
+                }
+                
+                if (parking) {
+                    const ajout = 15000;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Parking/Garage", valeur: ajout });
+                }
+                
+                if (cave) {
+                    const ajout = 5000;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Cave", valeur: ajout });
+                }
+                
+                if (jardin) {
+                    const ajout = 20000;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Jardin", valeur: ajout });
+                }
+                
+                // IMPACT ÉTAGE
+                if (etage === 'dernier') {
+                    const ajout = prixBase * 0.04;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Dernier étage", valeur: ajout });
+                } else if (etage === 'rez-de-chaussee') {
+                    const ajout = prixBase * -0.03;
+                    prixBase += ajout;
+                    ajustements.push({ label: "Rez-de-chaussée", valeur: ajout });
+                }
+                
+                // CALCUL FINAL
+                const estimationFinale = Math.round(prixBase);
+                const prixM2 = Math.round(estimationFinale / surface);
+                
+                // AFFICHAGE
+                afficherResultat(estimationFinale, prixM2, ajustements);
+            }
+        }
+        
+        function afficherResultat(estimation, prixM2, ajustements) {
+            document.getElementById('result-section').style.display = 'block';
+            
+            // Prix final
+            const prixElement = document.querySelector('.prix-final');
+            prixElement.textContent = estimation.toLocaleString('fr-FR') + ' €';
+            
+            // Prix au m²
+            document.querySelector('.prix-m2').textContent = prixM2.toLocaleString('fr-FR') + ' €/m²';
+            
+            // Détail des ajustements
+            const detailsList = document.querySelector('.details-list');
+            let detailsHTML = '';
+            
+            // Prix de base (sans les ajustements)
+            const prixSansAjustements = estimation - ajustements.reduce((sum, aj) => sum + aj.valeur, 0);
+            detailsHTML += `
+                <div class="detail-item">
+                    <span class="detail-label">Prix de base (${document.getElementById('surface').value}m² × ${Math.round(prixSansAjustements/parseInt(document.getElementById('surface').value))}€/m²):</span>
+                    <span class="detail-value">${Math.round(prixSansAjustements).toLocaleString('fr-FR')} €</span>
+                </div>
+            `;
+            
+            // Ajustements
+            ajustements.forEach(ajust => {
+                const type = ajust.valeur > 0 ? 'positive' : 'negative';
+                const signe = ajust.valeur > 0 ? '+' : '';
+                detailsHTML += `
+                    <div class="detail-item ${type}">
+                        <span class="detail-label">${ajust.label}:</span>
+                        <span class="detail-value">${signe}${Math.round(ajust.valeur).toLocaleString('fr-FR')} €</span>
+                    </div>
+                `;
+            });
+            
+            detailsList.innerHTML = detailsHTML;
+        }
+        
+        function recalculerEstimation() {
+            document.getElementById('result-section').style.display = 'none';
+        }
+        
+        function envoyerEstimation() {
+            const prix = document.querySelector('.prix-final').textContent;
+            alert(`Estimation ${prix} envoyée à votre email ! 📧`);
+        }
+        
+        // Écouteurs d'événements pour TOUS les champs
+        const champs = ['city', 'surface', 'rooms', 'bedrooms', 'property-type', 'condition', 'year', 'etage', 'balcon', 'parking', 'cave', 'jardin'];
+        champs.forEach(champ => {
+            const element = document.getElementById(champ);
+            if (element) {
+                if (element.type === 'checkbox') {
+                    element.addEventListener('change', calculerEstimationComplete);
+                } else {
+                    element.addEventListener('input', calculerEstimationComplete);
+                }
+            }
+        });
+        
+        // Gestion du formulaire
+        document.getElementById('estimationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculerEstimationComplete();
+        });
+    </script>
+</body>
+</html>
