@@ -200,7 +200,12 @@ section h2 {
 /* ===== FORMULAIRE ESTIMATION ===== */
 #estimation-form {
     background-color: #fff;
-    min-height: 80vh;
+    min-height: auto;
+    padding: 60px 0;
+}
+
+#estimation-form .container {
+    max-width: 800px;
 }
 
 #estimation-form h2 {
@@ -214,7 +219,7 @@ section h2 {
     font-size: 1.1rem;
 }
 
-.form-grid {
+.form-grid-compact {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -260,7 +265,7 @@ section h2 {
 }
 
 /* ===== CHECKBOXES ===== */
-.checkbox-group {
+.checkbox-group-compact {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -426,11 +431,11 @@ footer p {
         padding: 60px 0;
     }
     
-    .form-grid {
+    .form-grid-compact {
         grid-template-columns: 1fr;
     }
     
-    .checkbox-group {
+    .checkbox-group-compact {
         grid-template-columns: 1fr;
     }
     
@@ -480,49 +485,4 @@ footer p {
     .prix-final {
         font-size: 2.2rem;
     }
-}
-/* ===== FORMULAIRE COMPACT ===== */
-#estimation-form .container {
-    max-width: 800px;
-}
-
-#estimation-form {
-    background-color: #fff;
-    min-height: auto;
-    padding: 60px 0;
-}
-
-.form-group-compact {
-    margin-bottom: 20px;
-}
-
-.form-grid-compact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-/* Champs plus compacts */
-.form-group input,
-.form-group select {
-    padding: 12px 14px;
-    font-size: 0.95rem;
-}
-
-/* Checkboxes en ligne */
-.checkbox-group-compact {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-.checkbox-compact {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-}
-
-.checkbox-compact input {
-    margin-right: 8px;
-    transform: scale(1.1);
 }
